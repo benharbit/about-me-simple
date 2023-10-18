@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
   <head>
     <title>Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -231,12 +232,12 @@
                             <div>
                             ${
                               project.webLink
-                                ? `<a href="${project.webLink}"><img src="./public/external-link.png" width="10px" alt=${project.description}></a>`
+                                ? `<a href="${project.webLink}" aria-label="${project.description}"><img src="./public/external-link.png" width="10px" alt=${project.description}></a>`
                                 : ""
                             }
                             ${
                               project.githubLink
-                                ? ` <a class="blacklink" href="${project.githubLink}" color="black"><i class="devicon-github-original" style="font-size: 12px"></i></a>`
+                                ? ` <a class="blacklink" href="${project.githubLink}" color="black" aria-label="${project.description}><i class="devicon-github-original" style="font-size: 12px"></i></a>`
                                 : ""
                             }
                             </div>
@@ -270,6 +271,7 @@
             class="blacklink"
             href="https://www.github.com/benharbit"
             color="black"
+            aria-label="github profile link"
             ><i class="devicon-github-original"></i
           ></a>
         </div>
