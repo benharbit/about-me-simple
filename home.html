@@ -1,6 +1,18 @@
 <html>
-  <head> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <head>
+    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Full stack developer portfolio" />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, React, Responsive Design, Web3, Rust"
+    />
+    <meta name="title" content="Portfolio for full stack developer" />
+    <link rel="icon" href="./public/icon38.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
   </head>
   <style>
     .grid-container {
@@ -8,9 +20,9 @@
       flex-direction: column;
       grid-template-rows: auto auto;
       grid-template-columns: 1fr;
-      width: clamp(0px, 70%, 900px);
+      width: clamp(375px, 70%, 900px);
       left: 50%;
-      transform: translate(-50%);
+      transform: translate(-50%, 0%);
       position: absolute;
       grid-gap: 10px;
     }
@@ -20,7 +32,7 @@
       width: 600%;
       height: 150%;
       position: absolute;
-      top:0;
+      top: 0;
 
       z-index: -30000;
       /*transform: rotate(-5deg);*/
@@ -34,7 +46,7 @@
     }
 
     h1 {
-        font-weight: normal;
+      font-weight: normal;
     }
 
     @media (max-width: 700px) {
@@ -64,16 +76,16 @@
       width: 200px;
     }
     .first-image-box {
-        padding-right: 45px;
-        padding-bottom: 45px;
-        float: left;
+      padding-right: 45px;
+      padding-bottom: 45px;
+      float: left;
     }
 
     .first-image {
-        transform: translate(0px,25px) scale(1.4, 1.4); 
-        z-index: -40000;
-        padding-right: 40px;
-        padding-bottom: 40px;
+      transform: translate(0px, 25px) scale(1.4, 1.4);
+      z-index: -40000;
+      padding-right: 40px;
+      padding-bottom: 40px;
       /*
         justify-content: end;
         
@@ -92,16 +104,10 @@
       position: relative;
     }
 
-
-
     .main-img {
-      
       transform: translate(-2000px, -2000px) scale(1.2, 1.2);
-      
-    
     }
-    
-    
+
     .card {
       display: flex;
       flex-direction: column;
@@ -124,40 +130,39 @@
     }
 
     .contact-info {
-    display: flex;
-    flex-direction: column;
-    color: #fffff2;
-    background-color: #2f9aa8;
-    font-size: 15px;  
-    
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    
-    flex-grow:1;
-    gap:5px;
+      display: flex;
+      flex-direction: column;
+      color: #fffff2;
+      background-color: #2f9aa8;
+      font-size: 15px;
+
+      padding-top: 10px;
+      padding-left: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      flex-grow: 1;
+      gap: 5px;
     }
     .contact-container {
-        display: flex;  
-        flex-wrap: wrap;
-        flex: 1;
-       
+      padding: 10px; 
+      margin: 10px; 
+      display: flex;
+      flex-wrap: wrap;
+      
     }
     .blacklink {
-        color: black;
-        text-decoration: none; 
-        font-size: 20px;
+      color: black;
+      text-decoration: none;
+      font-size: 20px;
     }
     a {
-        color: #fffff2;
-        text-decoration: none; 
+      color: #fffff2;
+      text-decoration: none;
     }
 
     .about-me-links {
-        
-    padding-top: 10px;
-    
+      padding-top: 10px;
     }
 
     @media (max-width: 700px) {
@@ -169,7 +174,7 @@
       }
       .first-image {
         float: none;
-       /* transform: scale(1.2, 1.2);*/
+         transform: scale(1, 1);
         height: 250px;
         width: 250px;
         padding-bottom: 10px;
@@ -189,13 +194,15 @@
       .contact-info {
         margin-bottom: 40px;
       }
+      .background-shape {
+        height: 100%;
+      }
     }
     @media (min-height: 1000px) {
       .grid-container {
         gap: 100px;
       }
     }
-
   </style>
 
   <script>
@@ -205,12 +212,11 @@
     function buildWorkContainer() {
       const work = document.getElementById("workContainer");
       var request = new XMLHttpRequest();
+      console.log(window.screen.width)
       fetch("./data.json")
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           data.forEach((project) => {
-            console.log(project);
             work.innerHTML += `
                 <div class="card">
                     <a href="${project.webLink}"><img src="${
@@ -225,7 +231,7 @@
                             <div>
                             ${
                               project.webLink
-                                ? `<a href="${project.webLink}"><img src="./external-link.png" width="10px"></a>`
+                                ? `<a href="${project.webLink}"><img src="./public/external-link.png" width="10px" alt=${project.description}></a>`
                                 : ""
                             }
                             ${
@@ -251,17 +257,21 @@
     <div class="grid-container">
       <div class="about-me-main">
         <div class="background-shape"></div>
-        <img class="first-image" src="./public/omar.jpeg" alt="me" />
-        
+        <img class="first-image" src="./public/omar.jpeg" alt="programmer portrait" />
+
         <h1>About Me</h1>
         I am a full stack developer with a background in trading and
         derivatives. I am knowedgeable in Typescript/Javascript, Python, HTML,
         CSS, Tailwind, MUI, Solidity and Web3. Please check out my projects
-        below and contact me if you have any questions 
-        
+        below and contact me if you have any questions
 
         <div class="about-me-links">
-            <a class="blacklink" href="https://www.github.com/benharbit" color="black"><i class="devicon-github-original"></i></a>
+          <a
+            class="blacklink"
+            href="https://www.github.com/benharbit"
+            color="black"
+            ><i class="devicon-github-original"></i
+          ></a>
         </div>
       </div>
 
@@ -286,14 +296,14 @@
             benharbit@gmail.com
           </a>
 
-          <a href="https://www.github.com/benharbit" class="blacklink"><i class="devicon-github-original"></i></a>
+          <a href="https://www.github.com/benharbit" class="blacklink"
+            ><i class="devicon-github-original"></i
+          ></a>
         </div>
         <div>
-        <img  src="./public/omar2.jpeg" alt="me" width="400" height="300"  />
+          <img src="./public/omar2.jpeg" alt="progammer portrait" width="330px"  />
         </div>
-       
       </div>
     </div>
-   
   </body>
 </html>
