@@ -17,13 +17,14 @@
 
     .background-shape {
       background: #2f9aa8;
-      width: 2000px;
-      height: 300px;
+      width: 600%;
+      height: 150%;
       position: absolute;
+      top:0;
 
       z-index: -30000;
       /*transform: rotate(-5deg);*/
-      transform: translate(-500px, -120px) rotate(-5deg);
+      transform: translate(-50%, -50%) rotate(-5deg);
       /* transform: rotate(-5deg) translate(-50%, -170%) ; */
       /*transform: rotate(-5deg) translate(-50%, -50%) */
     }
@@ -189,6 +190,11 @@
         margin-bottom: 40px;
       }
     }
+    @media (min-height: 1000px) {
+      .grid-container {
+        gap: 100px;
+      }
+    }
 
   </style>
 
@@ -244,15 +250,15 @@
   <body>
     <div class="grid-container">
       <div class="about-me-main">
-          <div class="background-shape"></div>
-            <img class="first-image" src="./public/omar.jpeg" alt="me" />
-
+        <div class="background-shape"></div>
+        <img class="first-image" src="./public/omar.jpeg" alt="me" />
+        
         <h1>About Me</h1>
         I am a full stack developer with a background in trading and
         derivatives. I am knowedgeable in Typescript/Javascript, Python, HTML,
         CSS, Tailwind, MUI, Solidity and Web3. Please check out my projects
         below and contact me if you have any questions 
-     
+        
 
         <div class="about-me-links">
             <a class="blacklink" href="https://www.github.com/benharbit" color="black"><i class="devicon-github-original"></i></a>
