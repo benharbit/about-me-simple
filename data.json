@@ -3,8 +3,16 @@
         "src": "./public/futures.jpeg",
         "alt": "Trading front end",
         "title": "DeFi Trading Frontend",
-        "description": "Helped build a future and option trading platform in React, Javascript, Web3.",
+        "description": "Helped build a future and option trading platform in React, Javascript, and Web3.",
         "webLink": "https://www.akashamarkets.io/Home"
+    },
+    {
+        "src": "./public/nftmarketplace.webp",
+        "alt": "NFT Marketplace",
+        "title": "NFT Marketplace",
+        "description": "Contributed to a NFT Marketplace with React, NextJS, Typescript, and Web3.",
+        "webLink": "https://www.nftmarketcity.com",
+        "githubLink": "https://github.com/benharbit/nft-marketplace-generic"
     },
 {
     "src": "./public/tradingWidget.png",
